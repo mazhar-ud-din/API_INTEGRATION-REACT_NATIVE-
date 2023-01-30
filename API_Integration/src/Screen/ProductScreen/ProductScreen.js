@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, FlatList, ScrollView, Image, StatusBar } from 'react-native'
+import { StyleSheet, Text, View, FlatList,Image, StatusBar } from 'react-native'
 import React, { useCallback, useEffect, useState } from 'react'
 import { scale, verticalScale, moderateScale } from 'react-native-size-matters';
 
