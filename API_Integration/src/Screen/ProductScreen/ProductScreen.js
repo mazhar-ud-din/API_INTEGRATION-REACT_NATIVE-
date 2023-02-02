@@ -1,11 +1,13 @@
-import { StyleSheet, Text, View, FlatList,Image, StatusBar } from 'react-native'
+import { StyleSheet, Text, View, FlatList,Image, StatusBar, TouchableOpacity } from 'react-native'
 import React, { useCallback, useEffect, useState } from 'react'
 import { scale, verticalScale, moderateScale } from 'react-native-size-matters';
 
-export default function ProductScreen() {
+export default function ProductScreen({navigation}) {
 
   const [data, setData] = useState([])
-
+const goToBack=()=>{
+  navigation.goBack()
+}
   useEffect(() => {
     FatchDat()
   }, [])
@@ -20,7 +22,6 @@ export default function ProductScreen() {
   const renderItem = useCallback(({ item }) => {
     return (
       <>
-        <StatusBar backgroundColor={'transparent'} translucent barStyle={'light-content'} />
 
         <View >
           <Image style={styles.imgStyle} source={{ uri: item.thumbnail }} />
@@ -53,6 +54,9 @@ export default function ProductScreen() {
   return (
     <View style={styles.container} >
       <View style={styles.HeaderStyle}>
+       <TouchableOpacity onPress={goToBack}>
+        <Text>goBack</Text>
+       </TouchableOpacity>
         <Text style={{ textAlign: 'center', marginVertical: 5 ,fontSize:25,fontWeight:'bold',color:'#000'}}>PRODUCTS</Text>
       </View>
       <FlatList

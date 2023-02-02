@@ -1,10 +1,10 @@
 import React from 'react'
-import ProductScreen from './src/Screen/ProductScreen/ProductScreen'
+import Routes from './src/Navigation/Routes'
 
 const App = () => {
   return (
     <>
-      <ProductScreen/>
+      <Routes/>
     </>
   )
 }
